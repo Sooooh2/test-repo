@@ -1,10 +1,16 @@
+
 # test-repo
 test repository before the main event 
 
-<br>
+Syntax Squad
+
+
+
 Dhruv Rai & Khushi Tiwari
-<br>
+
 
 Jagrat Trivedi
-<br>
+
+
 radhi bharodiya
+
