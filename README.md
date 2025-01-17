@@ -9,7 +9,7 @@ Syntax Squad
 Dhruv Rai & Khushi Tiwari
 
 
-Jagrat Trivedi
+Jagrat Trivedi(C/C++)
 
 
 radhi bharodiya
