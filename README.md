@@ -12,6 +12,6 @@ Dhruv Rai & Khushi Tiwari
 Jagrat Trivedi(C/C++)
 
 
-radhiiii bharodiya
+bharodiya radhi
 
 
