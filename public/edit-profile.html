@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edit your professional profile - Job Seeker Profile">
+    <title>Edit Profile - Job Seeker</title>
+    
+    <!-- CSS Dependencies -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/editpage.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <span class="navbar-brand h1">Edit Profile</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fas fa-user"></i> View Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">
+                            <i class="fas fa-file-alt"></i> View Resume
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="d-flex">
+                <button class="btn btn-outline-primary me-2" onclick="saveProfileChanges()">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+                <button class="btn btn-primary" onclick="window.location.href='profile.html'">
+                    <i class="fas fa-eye"></i> View Profile
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid py-4">
+        <div class="row">
+            <!-- Left Column: Basic Info & Skills -->
+            <div class="col-lg-4">
+                <!-- Basic Info Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="edit-profile-header">
+                            <div class="profile-photo-container">
+                                <img src="" alt="Profile Picture" class="profile-picture" id="profilePhoto">
+                                <button class="photo-edit-btn" onclick="document.getElementById('photoInput').click()" aria-label="Change profile photo">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                                <input type="file" id="photoInput" hidden accept="image/*" aria-label="Upload profile photo">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="userName">First Name</label>
+                                <input type="text" class="form-control" id="userName" required>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName">
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="userDescription">Professional Summary</label>
+                                <textarea class="form-control" id="userDescription" rows="3" placeholder="Brief description of your professional background"></textarea>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="userEmail">Email</label>
+                                <input type="email" class="form-control" id="userEmail" required>
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="userPhone">Phone</label>
+                                <input type="tel" class="form-control" id="userPhone" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="section-title">Skills</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="skillInput" placeholder="Add a skill (Press Enter to add)">
+                            <div id="skillsContainer" class="mt-3 skills-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="section-title">Social Media</h3>
+                        <div id="socialMediaContainer"></div>
+                        <button class="btn btn-primary mt-3" onclick="addSocialMedia()">
+                            <i class="fas fa-plus"></i> Add Social Media
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Experience, Education & Projects -->
+            <div class="col-lg-8">
+                <!-- Experience Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="section-title">Work Experience</h3>
+                        <div id="experienceContainer"></div>
+                        <button class="btn btn-primary mt-3" onclick="addExperience()">
+                            <i class="fas fa-plus"></i> Add Experience
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Education Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="section-title">Education</h3>
+                        <div id="educationContainer"></div>
+                        <button class="btn btn-primary mt-3" onclick="addEducation()">
+                            <i class="fas fa-plus"></i> Add Education
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Projects Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="section-title">Projects</h3>
+                        <div id="projectsContainer"></div>
+                        <button class="btn btn-primary mt-3" onclick="addProject()">
+                            <i class="fas fa-plus"></i> Add Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/edit-profile.js"></script>
+</body>
+</html>
